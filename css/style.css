@@ -1,0 +1,366 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/**DECORAÇÃO DA BARRA DE MENU**/
+
+
+.navbar{
+    background-color: #862F35;
+    margin-top: 20px;
+    margin-left: 28px;
+    margin-right: 28px;
+    border-radius: 16px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.774); /**Tras sombra ao navbar**/
+    padding: 18px;
+    transition: all 0.4s ease; /* transição suave */
+}
+
+/**bloco para ajudar a centralizar o navbar**/
+.bloco_central{
+    height: 3px;
+    padding: 20px 110px;
+    background-color: transparent;
+}
+
+/**DECORAÇÃO BOTÃO LOGIN**/
+
+.botaologin{
+
+    background-color: #96383e;
+    color: #fff;
+    font-size: 14px;
+    padding: 12.5px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+
+}
+
+.botaologin:hover{
+    background-color: #491d20;
+}
+
+/**CORES E TAMANHO OS BOTOTES DO MENU**/
+
+.nav-link{
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+}
+
+/**CORES COM O MOUSE EM CIMA**/
+
+.nav-link:hover, .nav-link.active{
+    color: #ffffff;
+}
+
+
+/** Tela bem pequena **/
+.navbar-toggler{
+    margin-left: -60px;
+    margin-right: -20px;
+}   
+
+/**DECORAÇÃO DO UNDERLINE DOS LINKS DO MENU**/
+
+@media (min-width: 985px) {
+    
+
+
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        visibility: hidden;
+        transition: 0.1s ease-in-out;
+    }
+
+    .nav-link:hover:before, .nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+.logomenu{
+    margin-left: 15px;
+    position: absolute; /* Torna o logo posicionado absolutamente dentro do navbar */
+    top: 0%; /* Alinha o topo do logo ao centro verticalmente */
+
+}
+/* media screen para modo celular e tablet com menu hamburguer*/
+@media (min-width: 300px) and (max-width: 991px) {
+
+    .navbar-toggler-icon{
+
+        margin-bottom: 0px;
+    }
+
+
+    .faleconosco{
+        margin-bottom: 0px;
+
+
+    }
+    
+    .label{
+        margin-bottom: 32px;
+        margin-left: 10px;
+    }
+
+    .btn-container{
+        margin-left: 1px;
+        margin-bottom: 1px;
+
+    }
+
+   
+}   
+
+
+/*dark mod*/
+body.dark {
+    background: #292c35;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    margin-top: 10px;
+    padding: 5px;
+    position: relative;
+    height: 25px;
+    width: 45px;
+    transform: scale(1.2);
+
+}
+
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: -0.6px;
+    height: 20px;
+    width: 19.5px;
+    transform: translateX(0px);
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #ffffff;
+}
+
+.fa-sun {
+    color: #FFBF00;
+}
+
+/*font mais e menos*/
+.btn-container {
+    color: #fff;
+    text-decoration:none ;
+    margin-top: 9px;
+    position: relative;
+    margin-right: 20px;
+}
+
+#btnAumentar{
+    color: #fff;
+}
+
+#btnDiminuir{
+    color: #fff;
+}
+
+
+/* Bloco para proteção de vazamento de conteúdo */
+.bloco_protecao {
+    position: fixed; /* Fixa o bloco na tela */
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 20px; /* define a altura */
+    background-color: #fff; 
+}
+/* Ajuste conforme a altura da barra de navegação */
+
+main {
+    margin-top: 135px; 
+}
+
+
+/*------------------Footer-----------------------------*/
+
+/*isso deixa o footer sempre no fundo sem precisar de conteudo para empurrar ele*/
+.wrapper {
+    min-height: 100vh;
+}
+
+.about-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+
+}
+.about-footer img{
+    width: 150px;
+}
+.footer{
+    padding-top: 35px;
+}
+.social-midia-footer a {
+    margin-left: 10px;
+    color: white;
+}
+.social-midia-footer a:hover {
+    color: #862F35;
+}
+.info-footer a{
+ text-decoration: none;
+}
+.info-footer li{
+ list-style: none;
+}
+.info-footer li a {
+    color: white;
+}
+.info-footer ul li a {
+    transition: all 0.3s ease;
+}
+
+.info-footer li a:hover{
+    color: #862F35;
+    padding-left: 8px;
+}
+.info-footer ul li {
+    margin-left: 38% !important;
+    text-align: justify;
+}
+@media (max-width: 767.98px) { 
+    .info-footer ul li {
+        margin-left: 0 !important;
+    }
+    .info-footer ul h4 {
+        text-align: left;
+    }
+    .media{
+        margin-left: -30px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1025px) { 
+    .info-footer ul h4 {
+        margin-left: 35%;
+    }
+ }
+ @media (min-width: 1025px) and (max-width: 1113px) { 
+    .info-footer ul h4 {
+        margin-left: 30%;
+    }
+ }
+ @media (min-width: 1113px) and (max-width: 1399px) { 
+    .info-footer ul h4 {
+        margin-left: 18%;
+    }
+ }
+ @media (min-width: 1400px) and (max-width: 1629px) { 
+    .info-footer ul h4 {
+        margin-left: 10%;
+    }
+ }
+
+/* Definição das cores do icone */
+
+.material-icons.md-17 { font-size: 17px; }
+
+
+/*muda a cor da ancora*/
+
+.endereco_cor{
+    color: white;
+}
+
+
+/*muda a cor da ancora quando o mouse passa por cima*/
+.endereco_cor:hover{
+    color: #862F35;
+    transition: all 0.3s ease;
+
+}
+
+
+
+
+
+
+    /*--------------------------------CONTATO---------------------------------*/
+
+    
+
+/*Personalização do formulario*/
+
+.container_formulario {
+    max-width: 500px;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: -5px;
+    background-color: #862F35; 
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.container_informativo {
+    max-width: 500px;
+    margin-top: 15px;
+    margin-right: -5px;
+    margin-left: auto;
+    background-color: #862F35; 
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.texto_formulario{
+    color: #fff;
+}
+
+
+.botao_formulario{
+    background-color: #96383e;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.5s ease-in-out;
+}
+
+.botao_formulario:hover{
+    background-color: #491d20;
+    color: #fff;
+
+}
+
+.texto_justificado_formulario{
+    text-align: justify;
+    color: #fff;
+  }
+
