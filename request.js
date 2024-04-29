@@ -9,7 +9,7 @@ $.ajax({
         success: function(response) {
             // Função para incluir o response no HTML usando innerHTML
             incluirResponseNoHTML(response);
-            console.log('deu certo')
+            excluirRegistro();
         },
         error: function(error) {
             console.error('Ocorreu um erro:', error);
@@ -46,23 +46,24 @@ consulta.addEventListener('input', () => {
 
 //função para excluir NÃO ESTÁ FUNCIONANDO
 
-/*
+
 // Fazendo a requisição DELETE com jQuery AJAX
-var btnExcluir = document.getElementsByClassName("btnExcluir");
-var btn = document.getElementById("1");
+function excluirRegistro() {
+    var btnExcluir = Array.from(document.getElementsByClassName("btnExcluir"));
+    console.log(btnExcluir)
+    console.log(typeof(btnExcluir))
+    console.log(btnExcluir.length)
 
-btn.addEventListener("click", () => {
-    console.log("CLICADO")
-})
-
-// Itera sobre a coleção de elementos e adiciona o evento a cada um
-for (var i = 0; i < btnExcluir.length; i++) {
-    console.log("iterando botoes")
-    btnExcluir[i].addEventListener('click', function() {
-        console.log(btnExcluir[i].id);
-        console.log("Foi clicado")
-    });
-}*/
+    // Itera sobre a coleção de elementos e adiciona o evento a cada um
+    for (var i = 0; i < btnExcluir.length; i++) {
+        console.log("iterando botoes")
+        btnExcluir[i].addEventListener('click', function() {
+            console.log(btnExcluir[i].id);
+            console.log("Foi clicado")
+        });
+    }
+}
+/**/
 
 /*
     $.ajax({
