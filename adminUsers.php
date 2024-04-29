@@ -1,9 +1,8 @@
 <!--
     query copiada do projeto do jorge luiz
 -->
-<!--
     <?php
-
+/*
 session_start();
 if(!$_SESSION['admin']){
     header('Location:../login/login.php');
@@ -15,10 +14,8 @@ if(!$_SESSION['admin']){
     require_once('../../conexao.php');
     $sql='SELECT * FROM usuarios JOIN acesso on usuarios.idAcesso = acesso.idAcesso WHERE usuarios.idAcesso=1';
     $row=mysqli_query($conexao,$sql);
-
+*/
 ?>
-
--->
 
 
 <!DOCTYPE html>
@@ -156,106 +153,123 @@ if(!$_SESSION['admin']){
 
 
         <main class="flex-fill">
-                            <!-- MINI DASHBOARD DO ADMIN-->
-                            <div class="row mx-5 dashboard">
-                                <div class="row">
-                                    <div class="col-1">
-                                        <div class="d-flex flex-row">
-                                            <a class="mx-3 mt-1" href="adminUsers.html">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search" viewBox="0 0 16 16">
-                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                                                </svg>
-                                            </a>
-                                            <a class="mx-3 mt-1" href="adminLogs.html">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-hourglass-split" viewBox="0 0 16 16">
-                                                    <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-10">
-                                        <!--  BARRA DE PESQUISA  -->
-                                        <form class="px-2" method="GET" action="search.php">
-                                            <div class="card-body row no-gutters align-items-center ms-5">
-                                                <div class="col-md">
-                                                    <input class="form-control form-control-borderless" type="search" id="search" name="search" placeholder="Pequisa de usuário">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    
-                                    <div class="col-1">
-                                        <button class="btn dropdown-toggle float-end" type="button" data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="collapseExample"></button>
+                <!-- MINI DASHBOARD DO ADMIN-->
+                <div class="row mx-5 dashboard">
+                    <div class="row">
+                        <div class="col-1">
+                            <div class="d-flex flex-row">
+                                <a class="mx-3 mt-1" href="adminUsers.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                    </svg>
+                                </a>
+                                <a class="mx-3 mt-1" href="adminLogs.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                                        <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-10">
+                            <!--  BARRA DE PESQUISA  -->
+                            <form class="px-2">
+                                <div class="card-body row no-gutters align-items-center ms-5">
+                                    <div class="col-md">
+                                        <input class="form-control form-control-borderless" type="search" id="search" name="search" placeholder="Pequisa de usuário">
                                     </div>
                                 </div>
-            
-                                <div class="row collapse mt-4" id="info">
-                                    <div class="col-3">
-                                        <div class="card border-light" style="max-width: 18rem;">
-                                            <div class="card-header">Faturamento do dia</div>
-                                            <div class="card-body">
-                                            <h5 class="card-title">R$21.756,80</h5>
-                                            <p class="card-text"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="card border-light" style="max-width: 18rem;">
-                                            <div class="card-header">Total de acessos</div>
-                                            <div class="card-body">
-                                            <h5 class="card-title">56</h5>
-                                            <p class="card-text"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                        
-                                    <div class="col-3">
-                                        <div class="card border-light" style="max-width: 18rem;">
-                                            <div class="card-header">Usuários online</div>
-                                            <div class="card-body">
-                                            <h5 class="card-title">1</h5>
-                                            <p class="card-text"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-3">
-                                        <div class="card border-light" style="max-width: 18rem;">
-                                            <div class="card-header">Usuários cadastrados</div>
-                                            <div class="card-body">
-                                            <h5 class="card-title">6</h5>
-                                            <p class="card-text"></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </form>
+                        </div>
+                        
+                        <div class="col-1">
+                            <button class="btn dropdown-toggle float-end text-light" type="button" data-bs-toggle="collapse" data-bs-target="#info" aria-expanded="false" aria-controls="collapseExample"></button>
+                        </div>
+                    </div>
+
+                    <div class="row collapse mt-4" id="info">
+                        <div class="col-3">
+                            <div class="card border-light" style="max-width: 18rem;">
+                                <div class="card-header">Faturamento do dia</div>
+                                <div class="card-body">
+                                <h5 class="card-title">R$21.756,80</h5>
+                                <p class="card-text"></p>
                                 </div>
                             </div>
-            <div id="logs-autenticacao" class="">
-                <h2>Logs de Autenticação</h2>
-                <input type="text" id="search-log" class="form-control" placeholder="Filtrar por nome, CPF ou todos">
-                <div id="log-table-container" class="table-responsive">
-                    <!-- Tabela de logs será inserida aqui -->
-                    <table id="log-table" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Hora</th>
-                                <th>Nome</th>
-                                <th>2FA</th>
-                            </tr>
-                        </thead>
-                        <tbody id="log-table-body"></tbody>
-                    </table>
+                        </div>
+                        <div class="col-3">
+                            <div class="card border-light" style="max-width: 18rem;">
+                                <div class="card-header">Total de acessos</div>
+                                <div class="card-body">
+                                <h5 class="card-title">56</h5>
+                                <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="col-3">
+                            <div class="card border-light" style="max-width: 18rem;">
+                                <div class="card-header">Usuários online</div>
+                                <div class="card-body">
+                                <h5 class="card-title">1</h5>
+                                <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="card border-light" style="max-width: 18rem;">
+                                <div class="card-header">Usuários cadastrados</div>
+                                <div class="card-body">
+                                <h5 class="card-title">6</h5>
+                                <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center m-5">
+                    <div class="col-md-12">
+                        <div id="user-table-container" class="table-responsive">
+                            <!-- Tabela de usuários será inserida aqui -->
+                            <div class="table-responsive small">
+                                <table class="table table-striped table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome completo</th>
+                                            <th>Data de Nascimento</th>
+                                            <th>Sexo</th>
+                                            <th>E-mail</th>
+                                            <th>Telefone Celular</th>
+                                            <th>Telefone Fixo</th>
+                                            <th>Login</th>
+                                            <th>Excluir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="div">
+            
                 </div>
             </div>
         </main>
-
     </div>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="request.js"></script>
+
 </body>
 </html>
 
